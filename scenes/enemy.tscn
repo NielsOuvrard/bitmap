@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://dy8gpmfxmcmp4"]
 
 [ext_resource type="Texture2D" uid="uid://hl0ds6tu3ws3" path="res://assets/enemy.png" id="1_kb38c"]
-[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_rjqrf"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_rjqrf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_465ju"]
 atlas = ExtResource("1_kb38c")
@@ -120,3 +120,8 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_dcegt")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -8)
+target_position = Vector2(15, 0)
+collision_mask = 4

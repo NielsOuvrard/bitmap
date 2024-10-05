@@ -2,9 +2,17 @@ extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 100.0
-const JUMP_VELOCITY = -100.0
+var SPEED = 100.0
+var JUMP_VELOCITY = -200.0
 
+func collect_item(type: Data.Item):
+	match type:
+		Data.Item.PotionBlue:
+			SPEED = 200.0
+		Data.Item.PotionGreen:
+			JUMP_VELOCITY = -300.0
+		Data.Item.Torch:
+			$Torch.visible = true
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
